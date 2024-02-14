@@ -1,0 +1,420 @@
+{
+	"info": {
+		"_postman_id": "5d85b3ba-0740-43e0-acc8-d12763631c46",
+		"name": "RequestCollectionForSovcombank",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "32941848"
+	},
+	"item": [
+		{
+			"name": "seats/all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/seats/all"
+			},
+			"response": [
+				{
+					"name": "seats/all",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/seats/all"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 13 Feb 2024 11:52:45 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"row\": 1,\n        \"seats\": [\n            {\n                \"seatNumber\": 1,\n                \"statusFreeOrNot\": \"yes\",\n                \"price\": 100\n            },\n            {\n                \"seatNumber\": 3,\n                \"statusFreeOrNot\": \"yes\",\n                \"price\": 100\n            }\n        ]\n    },\n    {\n        \"row\": 2,\n        \"seats\": [\n            {\n                \"seatNumber\": 2,\n                \"statusFreeOrNot\": \"yes\",\n                \"price\": 80\n            }\n        ]\n    },\n    {\n        \"row\": 3,\n        \"seats\": [\n            {\n                \"seatNumber\": 1,\n                \"statusFreeOrNot\": \"yes\",\n                \"price\": 50\n            },\n            {\n                \"seatNumber\": 3,\n                \"statusFreeOrNot\": \"yes\",\n                \"price\": 50\n            }\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "cart",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/cart"
+			},
+			"response": [
+				{
+					"name": "cart",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/cart"
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 13 Feb 2024 11:53:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"info\": \"вы ничего не добавили в корзину!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "cart/add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    1,\r\n    3\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/cart/add"
+			},
+			"response": [
+				{
+					"name": "cart/add",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    1,\r\n    3\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/cart/add"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Set-Cookie",
+							"value": "session=802792e5-f800-4fee-bf56-00767b7bdddd"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 13 Feb 2024 11:53:44 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"tickets\": [\n        {\n            \"row\": 1,\n            \"seatNumber\": 1\n        },\n        {\n            \"row\": 1,\n            \"seatNumber\": 3\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "cart",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/cart"
+			},
+			"response": [
+				{
+					"name": "cart",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/cart"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 13 Feb 2024 11:53:57 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"totalPrice\": 200,\n    \"tickets\": [\n        {\n            \"row\": 1,\n            \"seatNumber\": 1,\n            \"price\": 100\n        },\n        {\n            \"row\": 1,\n            \"seatNumber\": 3,\n            \"price\": 100\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "cart/add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    5\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/cart/add"
+			},
+			"response": [
+				{
+					"name": "cart/add",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    5\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/cart/add"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 13 Feb 2024 11:54:14 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"tickets\": [\n        {\n            \"row\": 2,\n            \"seatNumber\": 2\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "cart",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/cart"
+			},
+			"response": [
+				{
+					"name": "cart",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/cart"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 13 Feb 2024 11:54:24 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"totalPrice\": 280,\n    \"tickets\": [\n        {\n            \"row\": 1,\n            \"seatNumber\": 1,\n            \"price\": 100\n        },\n        {\n            \"row\": 1,\n            \"seatNumber\": 3,\n            \"price\": 100\n        },\n        {\n            \"row\": 2,\n            \"seatNumber\": 2,\n            \"price\": 80\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "cart/add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    2\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/v1/cart/add"
+			},
+			"response": [
+				{
+					"name": "cart/add",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    2\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/cart/add"
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 13 Feb 2024 11:54:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"info\": \"выбранные места заняты\"\n}"
+				}
+			]
+		},
+		{
+			"name": "cart",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/v1/cart"
+			},
+			"response": [
+				{
+					"name": "cart",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/cart"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 13 Feb 2024 11:54:46 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"totalPrice\": 280,\n    \"tickets\": [\n        {\n            \"row\": 1,\n            \"seatNumber\": 1,\n            \"price\": 100\n        },\n        {\n            \"row\": 1,\n            \"seatNumber\": 3,\n            \"price\": 100\n        },\n        {\n            \"row\": 2,\n            \"seatNumber\": 2,\n            \"price\": 80\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}
